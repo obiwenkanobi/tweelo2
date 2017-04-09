@@ -5,7 +5,7 @@ function Constants() {
     this.ONE_MILE_IN_KM = 1609;
     this.DEF_LAT = 28.6139; //default latitude - Rajpath, New Delhi, India
     this.DEF_LNG = 77.2090; // default longitude 
-    this.TWEETS_UPDATE_INTERVAL = 30000; //update tweets after 30000 milliseconds
+    this.TWEETS_UPDATE_INTERVAL = 60000; //update tweets after 60000 milliseconds
 }
 
 function Connection() {
