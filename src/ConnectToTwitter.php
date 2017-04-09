@@ -1,7 +1,7 @@
 <?php
 
-    require_once("./lib/TwitterAPIExchange.php"); //wrapper to talk with twitter api
-    require_once("./lib/config.php"); //stores twitter authentication keys
+    require_once("../lib/TwitterAPIExchange.php"); //wrapper to talk with twitter api
+    require_once("../lib/config.php"); //stores twitter authentication keys
 
     $conn_settings = array(
         "oauth_access_token" => $OAUTH_ACCESS_TOKEN,
