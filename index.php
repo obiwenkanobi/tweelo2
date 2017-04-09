@@ -38,7 +38,7 @@
                 user.tweets.connection = new Connection();
                 user.tweets.showTweetsOnMap(user.tweets.connection, user.tweets); // fetch tweets and display them on map
 
-                //fetch tweets after every 30 secs
+                //fetch tweets after a fixed interval
                 utilities.runJobContinuously(function() {user.tweets.showTweetsOnMap(user.tweets.connection, user.tweets);}, 
                                                     constants.TWEETS_UPDATE_INTERVAL);
             }
