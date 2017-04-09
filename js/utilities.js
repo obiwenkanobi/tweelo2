@@ -1,5 +1,8 @@
+/*miscellaneous functions */
+
 function Utilities() {
 
+    //generate random colour
     this.getRandomColor = function() {
         var color = "rgb(" + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() * 256)) + "," + (Math.floor(Math.random() * 256)) + ")";
         return color;
@@ -24,6 +27,7 @@ function Utilities() {
         }
     }
 
+    //custom dialog box
     this.showMessage = function(msg) {
         $("<div></div>").html(msg).dialog({
             buttons: {
@@ -34,6 +38,7 @@ function Utilities() {
         });
     }
 
+    //daemon to update tweets
     this.runJobContinuously = function(fn, timeInterval) {
         setInterval(fn, timeInterval);
     }

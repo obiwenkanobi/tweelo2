@@ -1,9 +1,11 @@
+/* tweets object and functions */
+
 function Tweets(user, map) {
 
-    this.queue = []; 
-    this.maxId = 0; 
-    this.text = ""; 
-    this.htmlElem = "";
+    this.queue = []; //list of tweets
+    this.maxId = 0; //store the maxId of tweet to later get tweets with id more than this or new tweets
+    this.text = ""; //combined text of all tweets
+    this.htmlElem = ""; //tweets DOM element
     this.connection = {};
 
     this.showTweetsOnMap = function(conn, ts) {
@@ -32,6 +34,8 @@ function Tweets(user, map) {
         });
     }
 
+    //check if tweet is within user location
+    //twitter sends some tweets which are outside even if we specify geocode with "1mi" parameter
     this.isTweetWithinUserArea = function(lat1, lng1, lat2, lng2) {
     
         var radlat1 = Math.PI * lat1/180;
@@ -61,20 +65,23 @@ function Tweets(user, map) {
             if(ts[i].coordinates) { 
                 tweet.lng = ts[i].coordinates.coordinates[0];
                 tweet.lat = ts[i].coordinates.coordinates[1];
-            } else continue;
+            } else continue; //reject tweets with no coordinates
 
             if(!this.isTweetWithinUserArea(user.lat, user.lng, tweet.lat, tweet.lng)) continue;
 
             tweet = this.addTweetInfo(tweet, ts[i]);
 
-            if(tweet.id>this.maxId) this.maxId = tweet.id;
+            if(tweet.id>this.maxId) this.maxId = tweet.id;//get max tweet id
 
-            this.queue.push(tweet);
+            this.queue.push(tweet);//add tweet to list of tweets
         }
 
-        this.queue = this.removeDuplicateTweets(this.queue);
-        this.sortTweetsByTimeInDesc(this.queue);
-        this.keepOnly100Tweets(this.queue);
+        //twitter sends the same tweet for given since_id if there is no data
+        //though since_id is not inclusive
+        this.queue = this.removeDuplicateTweets(this.queue); 
+        
+        this.sortTweetsByTimeInDesc(this.queue); //show tweets in descending order
+        this.keepOnly100Tweets(this.queue); //show atmost 100 tweets
         this.showTweets(this.queue);
     }
 
@@ -99,6 +106,7 @@ function Tweets(user, map) {
             lookup[ts[i]["id"]] = ts[i];
         }   
 
+        //overwriting duplicate tweets
         for (i in lookup) {
             new_arr.push(lookup[i]);
         }
@@ -122,14 +130,14 @@ function Tweets(user, map) {
 
         this.htmlElem = document.getElementById("tweets");
 
-        var color = utilities.getRandomColor();
+        var color = utilities.getRandomColor();//get random color for tweets' text
 
         this.text = "";
         for(var i=0;i<ts.length;i++) {
             this.text +=  "<font color=\"" + color + "\">" + ts[i].marker.title + "</font><br/><br/>";
         }
 
-        for(i=0;i<ts.length;i++) ts[i].marker.setVisible(true);
+        for(i=0;i<ts.length;i++) ts[i].marker.setVisible(true);//show tweets' markers
 
         this.htmlElem.innerHTML = "<b>Nearby tweets </b><br/><br/>" + this.text;
     }

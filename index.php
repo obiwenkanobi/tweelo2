@@ -29,14 +29,16 @@
                 user.getUserPositionFromBrowser();
 
                 var map = new Map();
-                map.showMap(user);
-                user.showUserOnMap(map);
+                map.showMap(user); //load google map
+
+                user.showUserOnMap(map); //show user and 1 mile circle on map
 
                 user.tweets = new Tweets(user, map);
                 
                 user.tweets.connection = new Connection();
-                user.tweets.showTweetsOnMap(user.tweets.connection, user.tweets);
-                
+                user.tweets.showTweetsOnMap(user.tweets.connection, user.tweets); // fetch tweets and display them on map
+
+                //fetch tweets after every 30 secs
                 utilities.runJobContinuously(function() {user.tweets.showTweetsOnMap(user.tweets.connection, user.tweets);}, 
                                                     constants.TWEETS_UPDATE_INTERVAL);
             }

@@ -1,5 +1,7 @@
 <?php
 
+/* twitter api credentials */
+
 $OAUTH_ACCESS_TOKEN = '850036712176664576-kEWVgVUiaTwGIMauhNvfPziHsr2lPL8';
 $OAUTH_ACCESS_TOKEN_SECRET = 'gQLKm3ReguokqMIYxoy2Uj88IZAMtlHytT8kFTSmm0skk';
 

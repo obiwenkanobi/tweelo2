@@ -1,11 +1,13 @@
+/* user object and functions */
+
 function User() {
 
     this.lat = constants.DEF_LAT;
     this.lng = constants.DEF_LNG;
     this.latLng = new google.maps.LatLng(this.lat, this.lng);
-    this.marker = {};
-    this.area = {};
-    this.tweets = new Tweets();
+    this.marker = {}; //marker for user
+    this.area = {}; //area around user
+    this.tweets = new Tweets(); //user's location corresponding tweets
     
     this.getLatLng = function() {
         return this.latLng;
@@ -33,7 +35,8 @@ function User() {
     this.showUserArea = function(map) {
         this.area = map.createGoogleCircle(this.latLng, map);
     }
-    
+
+    //get user location from browser
     this.getUserPositionFromBrowser = function() {
 
         if(navigator.geolocation) {
