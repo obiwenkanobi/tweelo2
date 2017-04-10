@@ -1,5 +1,10 @@
 /* css for map, tweets and search box */
 
+html, body, .container {
+    height: 100%;
+    width: 100%;
+}
+
 .controls {
     margin-top: 10px;
     border: 1px solid transparent;
@@ -12,8 +17,8 @@
 }
 #map {
     float: left;
+    height: 100%;
     width: 70%;
-    height: 600px;
     background-color: grey;
 }
 #searchPlacesBox {
@@ -31,8 +36,8 @@
 }
 #tweets {
     float: left;
+    height: 100%;
     width: 28%;
-    height: 600px;
     overflow-y:scroll;
     padding-left: 10px;
 }
