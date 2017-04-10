@@ -49,9 +49,9 @@
     <body>
       <div class="container">
        	<!--<b style="font-size=100px">Tweets on map</b>
-        <img src="./img/tweet.webp" height="40" width="40"/>-->
+        <img src="./img/tweet.webp" height="40" width="40"/>
         <br/> 
-        <br/> 
+        <br/> -->
         <!--<div style="width:100%;">-->
             <input id="searchPlacesBox" class="controls" type="text" placeholder="Enter a location">
 		    <div id="map"></div>
