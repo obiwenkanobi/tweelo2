@@ -48,8 +48,8 @@
 	</head>
     <body>
       <div class="container">
-       	<b style="font-size=100px">Tweets on map</b>
-        <img src="./img/tweet.webp" height="40" width="40"/>
+       	<!--<b style="font-size=100px">Tweets on map</b>
+        <img src="./img/tweet.webp" height="40" width="40"/>-->
         <br/> 
         <br/> 
         <!--<div style="width:100%;">-->
