@@ -58,7 +58,8 @@ function Map() {
 
     this.createGoogleInfoWindow = function(text) {
         var w = new google.maps.InfoWindow({
-            content: text
+            content: text,
+            maxWidth: 175
         });
         return w;
     }
