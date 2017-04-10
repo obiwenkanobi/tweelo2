@@ -88,12 +88,19 @@ function Tweets(user, map) {
     this.addTweetInfo = function(tweet, t) {
 
         var imgSrc = "./img/red-dot.png";
+
         tweet.id = t.id;
         tweet.username = t.user.screen_name;
         tweet.text = t.text;
         tweet.latLng = map.createGoogleLatLng(tweet.lat, tweet.lng);
-        tweet.marker = map.createGoogleMarker(tweet.latLng, imgSrc,tweet.text);
-
+        tweet.marker = map.createGoogleMarker(tweet.latLng, imgSrc, "");
+        
+        var infoWindow = map.createGoogleInfoWindow(tweet.text);
+        
+        tweet.marker.addListener('click', function() {
+            infoWindow.open(map.gMap, tweet.marker);
+        });
+        
         return tweet;
     }
 
@@ -134,7 +141,7 @@ function Tweets(user, map) {
 
         this.text = "";
         for(var i=0;i<ts.length;i++) {
-            this.text +=  "<font color=\"" + color + "\">" + ts[i].marker.title + "</font><br/><br/>";
+            this.text +=  "<font color=\"" + color + "\">" + ts[i].text + "</font><br/><br/>";
         }
 
         for(i=0;i<ts.length;i++) ts[i].marker.setVisible(true);//show tweets' markers
