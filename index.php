@@ -6,10 +6,10 @@
         <link rel="stylesheet" type="text/css" href="./css/jquery-ui.css">
         <link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-	<script type="text/javascript" src="./js/bootstrap.js"></script>
         <script type="text/javascript" src="./js/config.js"></script>
         <script type="text/javascript" src="./js/jquery.js"></script>
         <script type="text/javascript" src="./js/jquery-ui.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACh2jGc1p42W7rt57RLLg7uImPZd0mC7w&libraries=places"></script>
         <script type="text/javascript" src="./js/utilities.js"></script>
         <script type="text/javascript" src="./js/map.js"></script>
