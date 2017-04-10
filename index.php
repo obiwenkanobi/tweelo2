@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="./css/jquery-ui.css">
         <link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<script type="text/javascript" src="./js/bootstrap.js"></script>
         <script type="text/javascript" src="./js/config.js"></script>
         <script type="text/javascript" src="./js/jquery.js"></script>
         <script type="text/javascript" src="./js/jquery-ui.js"></script>
