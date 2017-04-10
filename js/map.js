@@ -56,6 +56,13 @@ function Map() {
         return circle;
     }
 
+    this.createGoogleInfoWindow = function(text) {
+        var w = new google.maps.InfoWindow({
+            content: text
+        });
+        return w;
+    }
+    
     this.createGoogleLatLng = function(lat, lng) {
         return new google.maps.LatLng(lat, lng);
     }
